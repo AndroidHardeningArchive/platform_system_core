@@ -86,7 +86,7 @@ static int wakealarm_wake_interval = DEFAULT_PERIODIC_CHORES_INTERVAL_FAST;
 
 static BatteryMonitor* gBatteryMonitor;
 
-struct healthd_mode_ops *healthd_mode_ops;
+const struct healthd_mode_ops *healthd_mode_ops;
 
 int healthd_register_event(int fd, void (*handler)(uint32_t), EventWakeup wakeup) {
     struct epoll_event ev;
