@@ -44,7 +44,7 @@ static void healthd_mode_nop_heartbeat(void);
 static void healthd_mode_nop_battery_update(
     struct android::BatteryProperties *props);
 
-static struct healthd_mode_ops healthd_nops = {
+static const struct healthd_mode_ops healthd_nops = {
     .init = healthd_mode_nop_init,
     .preparetowait = healthd_mode_nop_preparetowait,
     .heartbeat = healthd_mode_nop_heartbeat,
@@ -52,9 +52,9 @@ static struct healthd_mode_ops healthd_nops = {
 };
 
 #ifdef CHARGER_NO_UI
-static struct healthd_mode_ops charger_ops = healthd_nops;
+static const struct healthd_mode_ops charger_ops = healthd_nops;
 #else
-static struct healthd_mode_ops charger_ops = {
+static const struct healthd_mode_ops charger_ops = {
     .init = healthd_mode_charger_init,
     .preparetowait = healthd_mode_charger_preparetowait,
     .heartbeat = healthd_mode_charger_heartbeat,

@@ -53,7 +53,7 @@ extern void healthd_mode_android_heartbeat(void);
 extern void healthd_mode_android_battery_update(
     struct android::BatteryProperties *props);
 
-static struct healthd_mode_ops android_ops = {
+static const struct healthd_mode_ops android_ops = {
     .init = healthd_mode_android_init,
     .preparetowait = healthd_mode_android_preparetowait,
     .heartbeat = healthd_mode_android_heartbeat,
