@@ -164,12 +164,12 @@ void set_wakeup_callback(void (*func)(bool success))
     wakeup_func = func;
 }
 
-struct autosuspend_ops autosuspend_wakeup_count_ops = {
+static const struct autosuspend_ops autosuspend_wakeup_count_ops = {
         .enable = autosuspend_wakeup_count_enable,
         .disable = autosuspend_wakeup_count_disable,
 };
 
-struct autosuspend_ops *autosuspend_wakeup_count_init(void)
+const struct autosuspend_ops *autosuspend_wakeup_count_init(void)
 {
     int ret;
     char buf[80];
