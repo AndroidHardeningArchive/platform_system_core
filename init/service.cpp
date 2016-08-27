@@ -909,7 +909,7 @@ void Service::Restart() {
 
 void Service::RestartIfNeeded(time_t* process_needs_restart_at) {
     boot_clock::time_point now = boot_clock::now();
-    boot_clock::time_point next_start = time_started_ + 5s;
+    boot_clock::time_point next_start = time_started_ + 10s;
     if (now > next_start) {
         flags_ &= (~SVC_RESTARTING);
         Start();
