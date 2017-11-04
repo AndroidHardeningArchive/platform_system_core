@@ -7,7 +7,7 @@ LOCAL_MODULE := sdcard
 LOCAL_CFLAGS := -Wall -Wno-unused-parameter -Werror
 LOCAL_SHARED_LIBRARIES := libbase libcutils libminijail libpackagelistparser
 
-LOCAL_SANITIZE := integer
+LOCAL_SANITIZE := integer object-size
 LOCAL_CLANG := true
 
 include $(BUILD_EXECUTABLE)
